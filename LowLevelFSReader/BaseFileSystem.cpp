@@ -9,6 +9,17 @@ BaseFileSystem::BaseFileSystem(FileReader* fileReader)
 }
 
 
+long long BaseFileSystem::GetClustersCount() {
+	return _ClustersCount;
+}
+
+FSCluster * BaseFileSystem::GetCluster(long clusterNumber)
+{
+	long long dataOffset = (clusterNumber - 1) * _BytesPerCluster;
+	BYTE* data = _FileReader->GetData(dataOffset, _BytesPerCluster);
+	return new FSCluster(data, _BytesPerCluster);
+}
+
 
 void BaseFileSystem::PrintSystemInfo()
 {

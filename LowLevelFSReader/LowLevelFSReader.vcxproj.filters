@@ -16,27 +16,42 @@
     <Filter Include="Исходные файлы\FileSystems">
       <UniqueIdentifier>{c0ea85ac-fbc1-4cea-b536-389bf7cd25cb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\FileSystems">
+      <UniqueIdentifier>{0eec64fc-6d7f-4113-8644-f37b69c73bd7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="BaseFileSystem.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="FileReader.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="FileSystemFactory.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="NTFSFileSystem.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="FATFileSystem.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="BaseFileSystem.h">
+      <Filter>Файлы заголовков\FileSystems</Filter>
     </ClInclude>
     <ClInclude Include="ExFATFileSystem.h">
+      <Filter>Файлы заголовков\FileSystems</Filter>
+    </ClInclude>
+    <ClInclude Include="FATFileSystem.h">
+      <Filter>Файлы заголовков\FileSystems</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystemFactory.h">
+      <Filter>Файлы заголовков\FileSystems</Filter>
+    </ClInclude>
+    <ClInclude Include="NTFSFileSystem.h">
+      <Filter>Файлы заголовков\FileSystems</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseIterator.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="FSCluster.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="FSClusterIterator.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="PDFClusterIterator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -64,6 +79,18 @@
     </ClCompile>
     <ClCompile Include="FATFileSystem.cpp">
       <Filter>Исходные файлы\FileSystems</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseIterator.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="FSCluster.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="FSClusterIterator.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="PDFClusterIterator.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

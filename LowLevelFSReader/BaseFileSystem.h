@@ -3,6 +3,7 @@
 #include <string>
 #include <windows.h>
 
+#include "FSCluster.h"
 #include "FileReader.h"
 
 using namespace std;
@@ -28,9 +29,9 @@ protected:
 
 public:
 	BaseFileSystem(FileReader* fileReader);
-
+	long long GetClustersCount();
 	void PrintSystemInfo();
-
+	FSCluster* GetCluster(long clusterNumber);
 	~BaseFileSystem();
 };
 

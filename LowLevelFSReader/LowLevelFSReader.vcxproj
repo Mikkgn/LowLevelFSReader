@@ -152,19 +152,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BaseFileSystem.h" />
+    <ClInclude Include="BaseIterator.h" />
     <ClInclude Include="ExFATFileSystem.h" />
     <ClInclude Include="FATFileSystem.h" />
     <ClInclude Include="FileReader.h" />
     <ClInclude Include="FileSystemFactory.h" />
+    <ClInclude Include="FSCluster.h" />
+    <ClInclude Include="FSClusterIterator.h" />
     <ClInclude Include="NTFSFileSystem.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="PDFClusterIterator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseFileSystem.cpp" />
+    <ClCompile Include="BaseIterator.cpp" />
     <ClCompile Include="ExFATFileSystem.cpp" />
     <ClCompile Include="FATFileSystem.cpp" />
     <ClCompile Include="FileReader.cpp" />
     <ClCompile Include="FileSystemFactory.cpp" />
+    <ClCompile Include="FSCluster.cpp" />
+    <ClCompile Include="FSClusterIterator.cpp" />
     <ClCompile Include="LowLevelFSReader.cpp" />
     <ClCompile Include="NTFSFileSystem.cpp" />
     <ClCompile Include="pch.cpp">
@@ -173,6 +180,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="PDFClusterIterator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

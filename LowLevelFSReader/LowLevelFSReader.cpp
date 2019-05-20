@@ -6,6 +6,8 @@
 #include "FileReader.h"
 #include "BaseFileSystem.h"
 #include "FileSystemFactory.h"
+#include "FSClusterIterator.h"
+#include "PDFClusterIterator.h"
 
 
 using namespace std;
@@ -45,5 +47,10 @@ int main(int argc, char** argv)
 	fileSystem = FileSystemFactory::GetFileSystem(fileReader);
 
 	fileSystem->PrintSystemInfo();
+
+	PDFClusterIterator *clusterIterator = new PDFClusterIterator(fileSystem);
+	clusterIterator->First();
+	FSCluster *cluster = clusterIterator->GetCurrent();
+	cluster->printHexData();
 
 }
