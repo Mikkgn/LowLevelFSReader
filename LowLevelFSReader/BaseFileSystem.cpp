@@ -15,7 +15,7 @@ long long BaseFileSystem::GetClustersCount() {
 
 FSCluster * BaseFileSystem::GetCluster(long clusterNumber)
 {
-	long long dataOffset = (clusterNumber - 1) * _BytesPerCluster;
+	long long dataOffset = clusterNumber * _BytesPerCluster;
 	BYTE* data = _FileReader->GetData(dataOffset, _BytesPerCluster);
 	return new FSCluster(data, _BytesPerCluster);
 }

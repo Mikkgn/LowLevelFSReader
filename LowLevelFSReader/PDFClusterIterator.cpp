@@ -10,15 +10,10 @@ PDFClusterIterator::PDFClusterIterator(BaseFileSystem* fileSystem): BaseIterator
 
 void PDFClusterIterator::First() 
 {
-	_ClusterIterator->First();
-	while (!_ClusterIterator->IsDone())
+	Next();
+	if (_ClusterIterator->IsDone())
 	{
-		FSCluster* cluster = _ClusterIterator->GetCurrent();
-		if (isClusterHasPDFHeader(cluster)) 
-		{
-			break;
-		}
-		_ClusterIterator->Next();
+		throw exception("PDF Header not found");
 	}
 }
 
@@ -26,14 +21,20 @@ void PDFClusterIterator::Next()
 {
 	while (!_ClusterIterator->IsDone())
 	{
+		_ClusterIterator->Next();
 		FSCluster* cluster = _ClusterIterator->GetCurrent();
 		if (isClusterHasPDFHeader(cluster))
 		{
 			break;
 		}
-		_ClusterIterator->Next();
 	}
 }
+
+long PDFClusterIterator::GetCurrentIndex()
+{
+	return _ClusterIterator->GetCurrentIndex();
+};
+
 
 bool PDFClusterIterator::IsDone()
 {
@@ -44,6 +45,7 @@ FSCluster* PDFClusterIterator::GetCurrent()
 {
 	return _ClusterIterator->GetCurrent();
 }
+
 
 bool PDFClusterIterator::isClusterHasPDFHeader(FSCluster* cluster) {
 

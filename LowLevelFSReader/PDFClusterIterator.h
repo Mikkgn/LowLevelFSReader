@@ -16,6 +16,7 @@ public:
 	virtual void Next();
 	virtual void First();
 	virtual bool IsDone();
+	long GetCurrentIndex();
 	virtual FSCluster* GetCurrent();
 
 	PDFClusterIterator(BaseFileSystem* fileSystem);

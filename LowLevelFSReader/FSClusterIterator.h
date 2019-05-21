@@ -16,6 +16,9 @@ public:
 	virtual void First();
 	virtual void Next();
 	virtual FSCluster* GetCurrent();
+	long GetCurrentIndex() {
+		return _CurrentIndex;
+	}
 
 	FSClusterIterator(BaseFileSystem* fileSystem);
 	~FSClusterIterator();

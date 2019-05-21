@@ -21,7 +21,7 @@ void FSClusterIterator::Next()
 
 bool FSClusterIterator::IsDone()
 {
-	return _CurrentIndex == (_FileSystem->GetClustersCount() - 1);
+	return (_FileSystem->GetClustersCount() - 1) == _CurrentIndex;
 }
 
 FSCluster* FSClusterIterator::GetCurrent()
